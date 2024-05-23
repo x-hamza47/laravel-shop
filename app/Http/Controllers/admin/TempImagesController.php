@@ -25,15 +25,15 @@ class TempImagesController extends Controller
             $sourcePath = public_path()."/temp/".$new_name;
             $destPath = public_path().'/temp/thumb/'.$new_name;
 
-            // $image_thumb = Image::fromFile($sourcePath);
-            // $image_thumb->resize(600, 600);
-            // $image_thumb->save($destPath);
+            // Generate thumbnail
+            $image_thumb = Image::fromFile($sourcePath);
+            $image_thumb->resize(300, 275, Image::Cover);
+            $image_thumb->save($destPath);
             
-
             return response()->json([
                 'status' => true,
                 'image_id' => $temp_image->id,
-                // 'imagePath' => asset('/temp/thumb/'. $new_name),
+                'imagePath' => asset('/temp/thumb/'. $new_name),
                 'message' => "Image uploaded successfully",
             ]);
 

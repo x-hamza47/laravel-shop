@@ -4,6 +4,8 @@ use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\BrandsController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\ProductImageController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\TempImagesController;
 use Illuminate\Http\Request;
@@ -82,6 +84,25 @@ Route::prefix('admin')->group(function(){
 
             });
         });
+
+        //---------- Product Routes
+        Route::controller(ProductController::class)->group(function(){
+            Route::prefix('products')->group(function(){
+
+                Route::get('/', 'index')->name('products.index');
+                Route::get('/create', 'create')->name('products.create');
+                Route::get('/pro-sub', 'productSubIndex')->name('product-sub-category.index');
+                Route::post('/', 'store')->name('products.store');
+                Route::get('/{product}/edit', 'edit')->name('products.edit');
+                Route::put('/{product}', 'update')->name('products.update');
+                Route::delete('/{product}', 'destroy')->name('products.delete');
+
+            });
+        });
+
+             // product-images-route
+        Route::post('/product-images/update', [ProductImageController::class, 'update'])->name('product-images.update');
+        Route::delete('/product-images', [ProductImageController::class, 'destroy'])->name('product-images.destroy');
         
         
         // temp-images-route
