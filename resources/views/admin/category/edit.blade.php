@@ -63,6 +63,15 @@
                             </select>
                         </div>
                     </div>									
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="show">Show on Homepage</label>
+                            <select name="show" id="show" class="form-control">
+                                <option {{ ($category->show == 'Yes') ? 'selected' : '' }} value="Yes">Yes</option>
+                                <option {{ ($category->show == 'No') ? 'selected' : '' }} value="No">No</option>
+                            </select>
+                        </div>
+                    </div>									
                 </div>
             </div>							
         </div>

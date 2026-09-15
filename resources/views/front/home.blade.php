@@ -102,14 +102,14 @@
                         <div class="col-lg-3">
                             <div class="cat-card">
                                 <div class="left">
-                                    @if ($category->image != "")
+                                    @if (filled($category->image))
                                     <img src="{{ asset('uploads/category/thumb/'.$category->image) }}" alt="category-thumbnail" class="img-fluid">
                                     @endif
                                 </div>
                                 <div class="right">
                                     <div class="cat-data">
                                         <h2>{{ $category->name }}</h2>
-                                        {{-- <p>100 Products</p> --}}
+                                        <p>{{ $category->products_count }} Products</p>
                                     </div>
                                 </div>
                             </div>
