@@ -2,7 +2,8 @@
 
 @section('content')
     <section class="section-1">
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"
+            data-bs-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <picture>
@@ -14,13 +15,14 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3">
                             <h1 class="display-4 text-white mb-3">Kids Fashion</h1>
-                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet
+                                amet ndiam elitr ipsum diam</p>
                             <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    
+
                     <picture>
                         <source media="(max-width: 799px)" srcset="{{ asset('front-assets/images/carousel-2-m.jpg') }}" />
                         <source media="(min-width: 800px)" srcset="{{ asset('front-assets/images/carousel-2.jpg') }}" />
@@ -30,7 +32,8 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3">
                             <h1 class="display-4 text-white mb-3">Womens Fashion</h1>
-                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet
+                                amet ndiam elitr ipsum diam</p>
                             <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
                         </div>
                     </div>
@@ -45,17 +48,20 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3">
                             <h1 class="display-4 text-white mb-3">Shop Online at Flat 70% off on Branded Clothes</h1>
-                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                            <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet
+                                amet ndiam elitr ipsum diam</p>
                             <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -68,25 +74,25 @@
                     <div class="box shadow-lg">
                         <div class="fa icon fa-check text-primary m-0 mr-3"></div>
                         <h2 class="font-weight-semi-bold m-0">Quality Product</h5>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-lg-3 ">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-shipping-fast text-primary m-0 mr-3"></div>
                         <h2 class="font-weight-semi-bold m-0">Free Shipping</h2>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-exchange-alt text-primary m-0 mr-3"></div>
                         <h2 class="font-weight-semi-bold m-0">14-Day Return</h2>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-lg-3 ">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-phone-volume text-primary m-0 mr-3"></div>
                         <h2 class="font-weight-semi-bold m-0">24/7 Support</h5>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,15 +101,16 @@
         <div class="container">
             <div class="section-title">
                 <h2>Categories</h2>
-            </div>           
+            </div>
             <div class="row pb-3">
+
                 @if (getCategories()->isNotEmpty())
                     @foreach (getCategories() as $category)
                         <div class="col-lg-3">
                             <div class="cat-card">
                                 <div class="left">
                                     @if (filled($category->image))
-                                    <img src="{{ asset('uploads/category/thumb/'.$category->image) }}" alt="category-thumbnail" class="img-fluid">
+                                        <img src="{{ $category->image_url ?? asset('admin-assets/img/default-150x150.png') }}" alt="category-thumbnail" class="img-fluid" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                     @endif
                                 </div>
                                 <div class="right">
@@ -114,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach  
+                    @endforeach
                 @endif
             </div>
         </div>
@@ -124,7 +131,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Featured Products</h2>
-            </div>    
+            </div>
             <div class="row pb-3">
                 @if ($featured_products->isNotEmpty())
                     @foreach ($featured_products as $product)
@@ -134,34 +141,36 @@
                         <div class="col-md-3">
                             <div class="card product-card">
                                 <div class="product-image position-relative">
-                                    <a href="" class="product-img">
-                                        @if (!empty($pro_img->image))
-                                            <img src="{{ asset('uploads/products/small/'.$pro_img->image) }}" class="card-img-top" >
+                                    <a href="{{ route('front.product', $product->slug) }}" class="product-img">
+                                        @if ($pro_img->image)
+                                            <img src="{{ $pro_img->image }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                         @else
-                                            <img src="{{ asset('admin-assets/img/default-150x150.png') }}" class="card-img-top" >
-                                        @endif  
-                                    <a class="whishlist" href="222"><i class="far fa-heart"></i></a>                            
-        
-                                    <div class="product-action">
-                                        <a class="btn btn-dark" href="#">
-                                            <i class="fa fa-shopping-cart"></i> Add To Cart
-                                        </a>                            
-                                    </div>
-                                </div>                        
+                                            <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
+                                                class="card-img-top">
+                                        @endif
+                                        <a class="whishlist" href="222"><i class="far fa-heart"></i></a>
+
+                                        <div class="product-action">
+                                            <a class="btn btn-dark" href="#">
+                                                <i class="fa fa-shopping-cart"></i> Add To Cart
+                                            </a>
+                                        </div>
+                                </div>
                                 <div class="card-body text-center mt-3">
                                     <a class="h6 link" href="product.php">{{ $product->title }}</a>
                                     <div class="price mt-2">
                                         <span class="h5"><strong>${{ $product->price }}</strong></span>
                                         @if ($product->compare_price > 0)
-                                            <span class="h6 text-underline"><del>${{ $product->compare_price }}</del></span>
+                                            <span
+                                                class="h6 text-underline"><del>${{ $product->compare_price }}</del></span>
                                         @endif
                                     </div>
-                                </div>                        
-                            </div>                                               
-                        </div>  
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 @endif
-                            
+
             </div>
         </div>
     </section>
@@ -170,45 +179,46 @@
         <div class="container">
             <div class="section-title">
                 <h2>Latest Produsts</h2>
-            </div>    
+            </div>
             <div class="row pb-3">
                 @if ($latest_products->isNotEmpty())
-                @foreach ($latest_products as $product)
-                    @php
-                        $pro_img = $product->product_images->first();
-                    @endphp
-                    <div class="col-md-3">
-                        <div class="card product-card">
-                            <div class="product-image position-relative">
-                                <a href="" class="product-img">
-                                    @if (!empty($pro_img->image))
-                                        <img src="{{ asset('uploads/products/small/'.$pro_img->image) }}" class="card-img-top" >
-                                    @else
-                                        <img src="{{ asset('admin-assets/img/default-150x150.png') }}" class="card-img-top" >
-                                    @endif  
-                                <a class="whishlist" href="222"><i class="far fa-heart"></i></a>                            
+                    @foreach ($latest_products as $product)
+                        @php
+                            $pro_img = $product->product_images->first();
+                        @endphp
+                        <div class="col-md-3">
+                            <div class="card product-card">
+                                <div class="product-image position-relative">
+                                    <a href="{{ route('front.product', $product->slug) }}" class="product-img">
+                                        @if (!empty($pro_img->image))
+                                            <img src="{{ $pro_img->image }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                        @else
+                                            <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
+                                                class="card-img-top">
+                                        @endif
+                                        <a class="whishlist" href="222"><i class="far fa-heart"></i></a>
 
-                                <div class="product-action">
-                                    <a class="btn btn-dark" href="#">
-                                        <i class="fa fa-shopping-cart"></i> Add To Cart
-                                    </a>                            
+                                        <div class="product-action">
+                                            <a class="btn btn-dark" href="#">
+                                                <i class="fa fa-shopping-cart"></i> Add To Cart
+                                            </a>
+                                        </div>
                                 </div>
-                            </div>                        
-                            <div class="card-body text-center mt-3">
-                                <a class="h6 link" href="product.php">{{ $product->title }}</a>
-                                <div class="price mt-2">
-                                    <span class="h5"><strong>${{ $product->price }}</strong></span>
-                                    @if ($product->compare_price > 0)
-                                        <span class="h6 text-underline"><del>${{ $product->compare_price }}</del></span>
-                                    @endif
+                                <div class="card-body text-center mt-3">
+                                    <a class="h6 link" href="product.php">{{ $product->title }}</a>
+                                    <div class="price mt-2">
+                                        <span class="h5"><strong>${{ $product->price }}</strong></span>
+                                        @if ($product->compare_price > 0)
+                                            <span
+                                                class="h6 text-underline"><del>${{ $product->compare_price }}</del></span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>                        
-                        </div>                                               
-                    </div>  
-                @endforeach
-            @endif 
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
 @endsection
-

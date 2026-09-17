@@ -60,7 +60,7 @@ class shopController extends Controller
 
             $products = $products->orderBy('id', 'DESC');
         }
-        $products = $products->get();
+        $products = $products->paginate(6)->withQueryString();
 
         $price_min = intval($request->get('price_min'));
         $price_max = (intval($request->get('price_max')) == 0 ? 1000 : $request->get('price_max'));
@@ -77,5 +77,19 @@ class shopController extends Controller
             'price_max',
             'sort_selected'
         ));
+    }
+
+    public function product(String $slug)
+    {
+        $product = Product::where('slug', $slug)->with('product_images')->firstOrFail();
+
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->where('status', 1)
+            ->with('product_images')
+            ->limit(12)
+            ->get();
+
+        return view('front.product', compact('product', 'relatedProducts'));
     }
 }

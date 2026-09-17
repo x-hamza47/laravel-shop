@@ -1,0 +1,974 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "slug": "electronics",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 2,
+      "name": "Audio",
+      "slug": "audio",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 3,
+      "name": "Clothing",
+      "slug": "clothing",
+      "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 4,
+      "name": "Shoes",
+      "slug": "shoes",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 5,
+      "name": "Beauty & Personal Care",
+      "slug": "beauty-personal-care",
+      "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 6,
+      "name": "Grocery",
+      "slug": "grocery",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&h=800&q=80",
+      "status": 1,
+      "show": "Yes"
+    }
+  ],
+  "sub_categories": [
+    {
+      "id": 1,
+      "name": "Smartphones",
+      "slug": "electronics-smartphones",
+      "category_id": 1,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 2,
+      "name": "Laptops",
+      "slug": "electronics-laptops",
+      "category_id": 1,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "slug": "audio-headphones",
+      "category_id": 2,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 4,
+      "name": "Speakers",
+      "slug": "audio-speakers",
+      "category_id": 2,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 5,
+      "name": "T-Shirts",
+      "slug": "clothing-t-shirts",
+      "category_id": 3,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 6,
+      "name": "Jackets",
+      "slug": "clothing-jackets",
+      "category_id": 3,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 7,
+      "name": "Running Shoes",
+      "slug": "shoes-running-shoes",
+      "category_id": 4,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 8,
+      "name": "Casual Sneakers",
+      "slug": "shoes-casual-sneakers",
+      "category_id": 4,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 9,
+      "name": "Skincare",
+      "slug": "beauty-skincare",
+      "category_id": 5,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 10,
+      "name": "Haircare",
+      "slug": "beauty-haircare",
+      "category_id": 5,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 11,
+      "name": "Snacks",
+      "slug": "grocery-snacks",
+      "category_id": 6,
+      "status": 1,
+      "show": "Yes"
+    },
+    {
+      "id": 12,
+      "name": "Beverages",
+      "slug": "grocery-beverages",
+      "category_id": 6,
+      "status": 1,
+      "show": "Yes"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "slug": "apple",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Samsung",
+      "slug": "samsung",
+      "status": 1
+    },
+    {
+      "id": 3,
+      "name": "Sony",
+      "slug": "sony",
+      "status": 1
+    },
+    {
+      "id": 4,
+      "name": "JBL",
+      "slug": "jbl",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "name": "Dell",
+      "slug": "dell",
+      "status": 1
+    },
+    {
+      "id": 6,
+      "name": "Nike",
+      "slug": "nike",
+      "status": 1
+    },
+    {
+      "id": 7,
+      "name": "Adidas",
+      "slug": "adidas",
+      "status": 1
+    },
+    {
+      "id": 8,
+      "name": "Nivea",
+      "slug": "nivea",
+      "status": 1
+    },
+    {
+      "id": 9,
+      "name": "L'Oreal",
+      "slug": "loreal",
+      "status": 1
+    },
+    {
+      "id": 10,
+      "name": "Nestle",
+      "slug": "nestle",
+      "status": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Apple iPhone 15",
+      "slug": "apple-iphone-15-1",
+      "description": "Apple iPhone 15 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 1,
+      "brand_id": 1,
+      "price": 249900,
+      "compare_price": 269900,
+      "sku": "APP-0001",
+      "barcode": "8000000000001",
+      "qty": 57,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S23",
+      "slug": "samsung-galaxy-s23-2",
+      "description": "Samsung Galaxy S23 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 1,
+      "brand_id": 2,
+      "price": 219900,
+      "compare_price": 239900,
+      "sku": "SAM-0002",
+      "barcode": "8000000000002",
+      "qty": 64,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Sony Xperia 5",
+      "slug": "sony-xperia-5-3",
+      "description": "Sony Xperia 5 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 1,
+      "brand_id": 3,
+      "price": 189900,
+      "compare_price": null,
+      "sku": "SON-0003",
+      "barcode": "8000000000003",
+      "qty": 71,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Apple iPhone 14",
+      "slug": "apple-iphone-14-4",
+      "description": "Apple iPhone 14 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 1,
+      "brand_id": 1,
+      "price": 199900,
+      "compare_price": 229900,
+      "sku": "APP-0004",
+      "barcode": "8000000000004",
+      "qty": 78,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1678652197831-2d180705cd2c?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Apple MacBook Air M2",
+      "slug": "apple-macbook-air-m2-5",
+      "description": "Apple MacBook Air M2 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 2,
+      "brand_id": 1,
+      "price": 349900,
+      "compare_price": 379900,
+      "sku": "APP-0005",
+      "barcode": "8000000000005",
+      "qty": 85,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Dell XPS 13",
+      "slug": "dell-xps-13-6",
+      "description": "Dell XPS 13 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 2,
+      "brand_id": 5,
+      "price": 289900,
+      "compare_price": 309900,
+      "sku": "DEL-0006",
+      "barcode": "8000000000006",
+      "qty": 92,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Samsung Galaxy Book3",
+      "slug": "samsung-galaxy-book3-7",
+      "description": "Samsung Galaxy Book3 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 2,
+      "brand_id": 2,
+      "price": 259900,
+      "compare_price": null,
+      "sku": "SAM-0007",
+      "barcode": "8000000000007",
+      "qty": 99,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Dell Inspiron 15",
+      "slug": "dell-inspiron-15-8",
+      "description": "Dell Inspiron 15 is a top choice offering great quality, performance, and value.",
+      "category_id": 1,
+      "sub_category_id": 2,
+      "brand_id": 5,
+      "price": 179900,
+      "compare_price": 199900,
+      "sku": "DEL-0008",
+      "barcode": "8000000000008",
+      "qty": 106,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Sony WH-1000XM5",
+      "slug": "sony-wh-1000xm5-9",
+      "description": "Sony WH-1000XM5 is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 3,
+      "brand_id": 3,
+      "price": 89900,
+      "compare_price": 99900,
+      "sku": "SON-0009",
+      "barcode": "8000000000009",
+      "qty": 113,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "JBL Tune 760NC",
+      "slug": "jbl-tune-760nc-10",
+      "description": "JBL Tune 760NC is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 3,
+      "brand_id": 4,
+      "price": 29900,
+      "compare_price": 34900,
+      "sku": "JBL-0010",
+      "barcode": "8000000000010",
+      "qty": 120,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Apple AirPods Max",
+      "slug": "apple-airpods-max-11",
+      "description": "Apple AirPods Max is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 3,
+      "brand_id": 1,
+      "price": 129900,
+      "compare_price": null,
+      "sku": "APP-0011",
+      "barcode": "8000000000011",
+      "qty": 127,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "JBL Flip 6",
+      "slug": "jbl-flip-6-12",
+      "description": "JBL Flip 6 is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 4,
+      "brand_id": 4,
+      "price": 34900,
+      "compare_price": 39900,
+      "sku": "JBL-0012",
+      "barcode": "8000000000012",
+      "qty": 134,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Sony SRS-XB13",
+      "slug": "sony-srs-xb13-13",
+      "description": "Sony SRS-XB13 is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 4,
+      "brand_id": 3,
+      "price": 19900,
+      "compare_price": null,
+      "sku": "SON-0013",
+      "barcode": "8000000000013",
+      "qty": 141,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "JBL Charge 5",
+      "slug": "jbl-charge-5-14",
+      "description": "JBL Charge 5 is a top choice offering great quality, performance, and value.",
+      "category_id": 2,
+      "sub_category_id": 4,
+      "brand_id": 4,
+      "price": 44900,
+      "compare_price": 49900,
+      "sku": "JBL-0014",
+      "barcode": "8000000000014",
+      "qty": 148,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Nike Sportswear Tee",
+      "slug": "nike-sportswear-tee-15",
+      "description": "Nike Sportswear Tee is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 5,
+      "brand_id": 6,
+      "price": 4900,
+      "compare_price": 5900,
+      "sku": "NIK-0015",
+      "barcode": "8000000000015",
+      "qty": 155,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Adidas Essentials Tee",
+      "slug": "adidas-essentials-tee-16",
+      "description": "Adidas Essentials Tee is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 5,
+      "brand_id": 7,
+      "price": 4500,
+      "compare_price": null,
+      "sku": "ADI-0016",
+      "barcode": "8000000000016",
+      "qty": 162,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Nike Dri-FIT Tee",
+      "slug": "nike-dri-fit-tee-17",
+      "description": "Nike Dri-FIT Tee is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 5,
+      "brand_id": 6,
+      "price": 5500,
+      "compare_price": 6500,
+      "sku": "NIK-0017",
+      "barcode": "8000000000017",
+      "qty": 169,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Nike Windrunner Jacket",
+      "slug": "nike-windrunner-jacket-18",
+      "description": "Nike Windrunner Jacket is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 6,
+      "brand_id": 6,
+      "price": 12900,
+      "compare_price": 14900,
+      "sku": "NIK-0018",
+      "barcode": "8000000000018",
+      "qty": 176,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Adidas Track Jacket",
+      "slug": "adidas-track-jacket-19",
+      "description": "Adidas Track Jacket is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 6,
+      "brand_id": 7,
+      "price": 11900,
+      "compare_price": null,
+      "sku": "ADI-0019",
+      "barcode": "8000000000019",
+      "qty": 183,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Nike Sportswear Jacket",
+      "slug": "nike-sportswear-jacket-20",
+      "description": "Nike Sportswear Jacket is a top choice offering great quality, performance, and value.",
+      "category_id": 3,
+      "sub_category_id": 6,
+      "brand_id": 6,
+      "price": 13900,
+      "compare_price": 15900,
+      "sku": "NIK-0020",
+      "barcode": "8000000000020",
+      "qty": 190,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Nike Air Zoom Pegasus",
+      "slug": "nike-air-zoom-pegasus-21",
+      "description": "Nike Air Zoom Pegasus is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 7,
+      "brand_id": 6,
+      "price": 15900,
+      "compare_price": 17900,
+      "sku": "NIK-0021",
+      "barcode": "8000000000021",
+      "qty": 197,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Adidas Ultraboost",
+      "slug": "adidas-ultraboost-22",
+      "description": "Adidas Ultraboost is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 7,
+      "brand_id": 7,
+      "price": 18900,
+      "compare_price": 20900,
+      "sku": "ADI-0022",
+      "barcode": "8000000000022",
+      "qty": 204,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Nike React Infinity",
+      "slug": "nike-react-infinity-23",
+      "description": "Nike React Infinity is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 7,
+      "brand_id": 6,
+      "price": 16900,
+      "compare_price": null,
+      "sku": "NIK-0023",
+      "barcode": "8000000000023",
+      "qty": 211,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Adidas Stan Smith",
+      "slug": "adidas-stan-smith-24",
+      "description": "Adidas Stan Smith is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 8,
+      "brand_id": 7,
+      "price": 9900,
+      "compare_price": 11900,
+      "sku": "ADI-0024",
+      "barcode": "8000000000024",
+      "qty": 218,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Nike Air Force 1",
+      "slug": "nike-air-force-1-25",
+      "description": "Nike Air Force 1 is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 8,
+      "brand_id": 6,
+      "price": 11900,
+      "compare_price": 13900,
+      "sku": "NIK-0025",
+      "barcode": "8000000000025",
+      "qty": 225,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1600185365483-26d7db3c2c17?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Adidas Superstar",
+      "slug": "adidas-superstar-26",
+      "description": "Adidas Superstar is a top choice offering great quality, performance, and value.",
+      "category_id": 4,
+      "sub_category_id": 8,
+      "brand_id": 7,
+      "price": 10900,
+      "compare_price": null,
+      "sku": "ADI-0026",
+      "barcode": "8000000000026",
+      "qty": 232,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Nivea Soft Moisturizing Cream",
+      "slug": "nivea-soft-moisturizing-cream-27",
+      "description": "Nivea Soft Moisturizing Cream is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 9,
+      "brand_id": 8,
+      "price": 899,
+      "compare_price": 1199,
+      "sku": "NIV-0027",
+      "barcode": "8000000000027",
+      "qty": 239,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "L'Oreal Revitalift Serum",
+      "slug": "loreal-revitalift-serum-28",
+      "description": "L'Oreal Revitalift Serum is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 9,
+      "brand_id": 9,
+      "price": 1599,
+      "compare_price": 1899,
+      "sku": "L'O-0028",
+      "barcode": "8000000000028",
+      "qty": 246,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Nivea Micellar Water",
+      "slug": "nivea-micellar-water-29",
+      "description": "Nivea Micellar Water is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 9,
+      "brand_id": 8,
+      "price": 799,
+      "compare_price": null,
+      "sku": "NIV-0029",
+      "barcode": "8000000000029",
+      "qty": 53,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "L'Oreal Elvive Shampoo",
+      "slug": "loreal-elvive-shampoo-30",
+      "description": "L'Oreal Elvive Shampoo is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 10,
+      "brand_id": 9,
+      "price": 1099,
+      "compare_price": 1299,
+      "sku": "L'O-0030",
+      "barcode": "8000000000030",
+      "qty": 60,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Nivea Hair Care Conditioner",
+      "slug": "nivea-hair-care-conditioner-31",
+      "description": "Nivea Hair Care Conditioner is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 10,
+      "brand_id": 8,
+      "price": 999,
+      "compare_price": null,
+      "sku": "NIV-0031",
+      "barcode": "8000000000031",
+      "qty": 67,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "L'Oreal Hair Serum",
+      "slug": "loreal-hair-serum-32",
+      "description": "L'Oreal Hair Serum is a top choice offering great quality, performance, and value.",
+      "category_id": 5,
+      "sub_category_id": 10,
+      "brand_id": 9,
+      "price": 1299,
+      "compare_price": 1499,
+      "sku": "L'O-0032",
+      "barcode": "8000000000032",
+      "qty": 74,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Nestle KitKat Pack",
+      "slug": "nestle-kitkat-pack-33",
+      "description": "Nestle KitKat Pack is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 11,
+      "brand_id": 10,
+      "price": 399,
+      "compare_price": 499,
+      "sku": "NES-0033",
+      "barcode": "8000000000033",
+      "qty": 81,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1622484212385-1a8b3f0b5b3d?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Nestle Munch Chocolate",
+      "slug": "nestle-munch-chocolate-34",
+      "description": "Nestle Munch Chocolate is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 11,
+      "brand_id": 10,
+      "price": 349,
+      "compare_price": null,
+      "sku": "NES-0034",
+      "barcode": "8000000000034",
+      "qty": 88,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Nestle Cereal Pack",
+      "slug": "nestle-cereal-pack-35",
+      "description": "Nestle Cereal Pack is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 11,
+      "brand_id": 10,
+      "price": 599,
+      "compare_price": 699,
+      "sku": "NES-0035",
+      "barcode": "8000000000035",
+      "qty": 95,
+      "is_featured": "Yes",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1521483451438-379a8f5f2d4a?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Nestle Coffee Jar",
+      "slug": "nestle-coffee-jar-36",
+      "description": "Nestle Coffee Jar is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 12,
+      "brand_id": 10,
+      "price": 899,
+      "compare_price": 999,
+      "sku": "NES-0036",
+      "barcode": "8000000000036",
+      "qty": 102,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Nestle Milk Pack",
+      "slug": "nestle-milk-pack-37",
+      "description": "Nestle Milk Pack is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 12,
+      "brand_id": 10,
+      "price": 299,
+      "compare_price": null,
+      "sku": "NES-0037",
+      "barcode": "8000000000037",
+      "qty": 109,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Nestle Juice Bottle",
+      "slug": "nestle-juice-bottle-38",
+      "description": "Nestle Juice Bottle is a top choice offering great quality, performance, and value.",
+      "category_id": 6,
+      "sub_category_id": 12,
+      "brand_id": 10,
+      "price": 349,
+      "compare_price": 399,
+      "sku": "NES-0038",
+      "barcode": "8000000000038",
+      "qty": 116,
+      "is_featured": "No",
+      "track_qty": "Yes",
+      "status": 1,
+      "images": [
+        "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&h=800&q=80"
+      ]
+    }
+  ]
+}

@@ -65,7 +65,7 @@
                         <h2>Brand</h3>
                     </div>
 
-                    <div class="card">
+                    <div class="card brand-scroll">
                         <div class="card-body">
                             @if ($brands->isNotEmpty())
                                 @foreach ($brands as $brand)
@@ -120,10 +120,9 @@
                                 <div class="col-md-4">
                                     <div class="card product-card">
                                         <div class="product-image position-relative">
-                                            <a href="" class="product-img">
+                                            <a href="{{ route('front.product', $product->slug) }}" class="product-img">
                                                 @if (!empty($pro_img->image))
-                                                    <img src="{{ asset('uploads/products/small/' . $pro_img->image) }}"
-                                                        class="card-img-top">
+                                                    <img src="{{ $pro_img->image_url ?? asset('admin-assets/img/default-150x150.png') }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                                 @else
                                                     <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
                                                         class="card-img-top">
@@ -152,17 +151,7 @@
 
                         <div class="col-md-12 pt-5">
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-end">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
+                               {{ $products->links() }}
                             </nav>
                         </div>
                     </div>
@@ -175,6 +164,20 @@
 
 @section('customJs')
     <script>
+        
+        function debounce(func, delay) {
+           let timer;
+            
+           return function(...args) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+           }
+
+        }
+        const debouncedApplyFilters = debounce(applyFilters, 1500);
+
         range_slider = $(".js-range-slider").ionRangeSlider({
             type: "double",
             min: 0,
@@ -186,17 +189,17 @@
             skin: 'round',
             max_postfix: "+",
             onFinish: function() {
-                applyFilters()
+                debouncedApplyFilters();
             }
         });
 
         var slider = $(".js-range-slider").data("ionRangeSlider")
 
         $(".brand-label").change(function() {
-            applyFilters();
+            debouncedApplyFilters();
         });
         $("#sort").change(function() {
-            applyFilters();
+            debouncedApplyFilters();
         });
 
         function applyFilters() {

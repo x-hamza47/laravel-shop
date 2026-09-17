@@ -18,4 +18,12 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function getImageUrlAttribute() {
+        
+        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
+            return $this->image;
+        }
+        return asset('uploads/category/thumb/' . $this->image); 
+    }
 }
