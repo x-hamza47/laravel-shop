@@ -34,7 +34,9 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{ $cart->options->product_images->image_url }}" width="" height="" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                                <img src="{{ $cart->options->product_images->image_url }}" width=""
+                                                    height=""
+                                                    onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                                 <h2>{{ $cart->name }}</h2>
                                             </div>
                                         </td>
@@ -71,7 +73,7 @@
 
 
                             </tbody>
-                            
+
                         </table>
                     </div>
                 </div>
