@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductImageController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\TempImagesController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ShopController;
@@ -38,24 +39,41 @@ Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('front.a
 Route::post('/update-cart', [CartController::class, 'updateCart'])->name('front.updateCart');
 Route::post('/remove-from-cart', [CartController::class, 'deleteItem'])->name('front.deleteItem.cart');
 
-Route::prefix('admin')->group(function(){
+//! Auth Routes
+
+
+
+
+Route::prefix('account')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [AuthController::class, 'loginPage'])->name('account.login.show');
+        Route::get('/register', [AuthController::class, 'registerPage'])->name('account.register.show');
+        Route::post('/register', [AuthController::class, 'register'])->name('account.register');
+    });
+    Route::middleware('auth')->group(function () {
+        Route::post('/login', [AuthController::class, 'login'])->name('account.login');
+    });
+});
+
+
+
+Route::prefix('admin')->group(function () {
 
     // ---- Guest Routes
-    Route::middleware('admin.guest')->group(function(){
+    Route::middleware('admin.guest')->group(function () {
 
         Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
         Route::post('/authenticate', [AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
-
     });
 
     // ---- Admin Routes
-    Route::middleware('admin.auth')->group(function(){
+    Route::middleware('admin.auth')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout', [HomeController::class, 'logout'])->name('admin.logout');
 
-            #------ Category Routes
-        Route::controller(CategoryController::class)->group(function(){
-            Route::prefix('categories')->group(function(){
+        #------ Category Routes
+        Route::controller(CategoryController::class)->group(function () {
+            Route::prefix('categories')->group(function () {
 
                 Route::get('/', 'index')->name('categories.index');
                 Route::get('/create', 'create')->name('categories.create');
@@ -63,13 +81,12 @@ Route::prefix('admin')->group(function(){
                 Route::get('/{category}/edit', 'edit')->name('categories.edit');
                 Route::put('/{category}', 'update')->name('categories.update');
                 Route::delete('/{category}', 'destroy')->name('categories.delete');
-
             });
         });
 
         //--------- Sub Category Routes
-        Route::controller(SubCategoryController::class)->group(function(){
-            Route::prefix('sub-categories')->group(function(){
+        Route::controller(SubCategoryController::class)->group(function () {
+            Route::prefix('sub-categories')->group(function () {
 
                 Route::get('/', 'index')->name('sub-categories.index');
                 Route::get('/create', 'create')->name('sub-categories.create');
@@ -77,14 +94,12 @@ Route::prefix('admin')->group(function(){
                 Route::get('/{subCategory}/edit', 'edit')->name('sub-categories.edit');
                 Route::put('/{subCategory}', 'update')->name('sub-categories.update');
                 Route::delete('/{subCategory}', 'destroy')->name('sub-categories.delete');
-
             });
-
         });
 
         //---------- Brands Routes
-        Route::controller(BrandsController::class)->group(function(){
-            Route::prefix('brands')->group(function(){
+        Route::controller(BrandsController::class)->group(function () {
+            Route::prefix('brands')->group(function () {
 
                 Route::get('/', 'index')->name('brands.index');
                 Route::get('/create', 'create')->name('brands.create');
@@ -92,13 +107,12 @@ Route::prefix('admin')->group(function(){
                 Route::get('/{brand}/edit', 'edit')->name('brands.edit');
                 Route::put('/{brand}', 'update')->name('brands.update');
                 Route::delete('/{brands}', 'destroy')->name('brands.delete');
-
             });
         });
 
         //---------- Product Routes
-        Route::controller(ProductController::class)->group(function(){
-            Route::prefix('products')->group(function(){
+        Route::controller(ProductController::class)->group(function () {
+            Route::prefix('products')->group(function () {
 
                 Route::get('/', 'index')->name('products.index');
                 Route::get('/create', 'create')->name('products.create');
@@ -107,32 +121,27 @@ Route::prefix('admin')->group(function(){
                 Route::get('/{product}/edit', 'edit')->name('products.edit');
                 Route::put('/{product}', 'update')->name('products.update');
                 Route::delete('/{product}', 'destroy')->name('products.delete');
-
             });
         });
 
-             // product-images-route
+        // product-images-route
         Route::post('/product-images/update', [ProductImageController::class, 'update'])->name('product-images.update');
         Route::delete('/product-images', [ProductImageController::class, 'destroy'])->name('product-images.destroy');
-        
-        
+
+
         // temp-images-route
         Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
 
-        Route::get('/getSLug', function(Request $request){
+        Route::get('/getSLug', function (Request $request) {
             $slug = '';
             if (!empty($request->title)) {
-               $slug = Str::slug($request->title);
+                $slug = Str::slug($request->title);
             }
 
             return response()->json([
-                'status'=> true,
+                'status' => true,
                 'slug' => $slug
             ]);
-
         })->name('getSlug');
-
     });
-
 });
-
