@@ -98,7 +98,7 @@
                         <div class="col-12 pb-1">
                             <div class="d-flex align-items-center justify-content-end mb-4">
                                 <div class="ml-2">
-                        
+
                                     <select name="sort" id="sort" class="form-select form-select-sm">
                                         <option value="latest" {{ $sort_selected == 'latest' ? 'selected' : '' }}>Latest
                                         </option>
@@ -122,16 +122,31 @@
                                         <div class="product-image position-relative">
                                             <a href="{{ route('front.product', $product->slug) }}" class="product-img">
                                                 @if (!empty($pro_img->image))
-                                                    <img src="{{ $pro_img->image_url ?? asset('admin-assets/img/default-150x150.png') }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                                    <img src="{{ $pro_img->image_url ?? asset('admin-assets/img/default-150x150.png') }}"
+                                                        class="card-img-top"
+                                                        onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                                 @else
                                                     <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
                                                         class="card-img-top">
                                                 @endif
                                                 <a class="whishlist" href="222"><i class="far fa-heart"></i></a>
                                                 <div class="product-action">
-                                                    <a class="btn btn-dark" href="#">
-                                                        <i class="fa fa-shopping-cart"></i> Add To Cart
-                                                    </a>
+                                                    @php
+                                                        $exists = Cart::content()
+                                                            ->where('id', $product->id)
+                                                            ->isNotEmpty();
+                                                    @endphp
+
+                                                    @if (!$exists)
+                                                        <a href="javascript:void(0);"
+                                                            onclick="addToCart({{ $product->id }})"
+                                                            class="btn btn-dark"><i class="fas fa-shopping-cart"></i>
+                                                            &nbsp;ADD TO CART</a>
+                                                    @else
+                                                        <a href="{{ route('front.cart') }}" class="btn btn-dark"><i
+                                                                class="fas fa-shopping-cart"></i>
+                                                            &nbsp; Already in Cart</a>
+                                                    @endif
                                                 </div>
                                         </div>
                                         <div class="card-body text-center mt-3">
@@ -151,7 +166,7 @@
 
                         <div class="col-md-12 pt-5">
                             <nav aria-label="Page navigation example">
-                               {{ $products->links() }}
+                                {{ $products->links() }}
                             </nav>
                         </div>
                     </div>
@@ -164,16 +179,15 @@
 
 @section('customJs')
     <script>
-        
         function debounce(func, delay) {
-           let timer;
-            
-           return function(...args) {
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                func.apply(this, args);
-            }, delay);
-           }
+            let timer;
+
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+            }
 
         }
         const debouncedApplyFilters = debounce(applyFilters, 1500);

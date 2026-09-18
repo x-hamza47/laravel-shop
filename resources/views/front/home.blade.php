@@ -110,7 +110,9 @@
                             <div class="cat-card">
                                 <div class="left">
                                     @if (filled($category->image))
-                                        <img src="{{ $category->image_url ?? asset('admin-assets/img/default-150x150.png') }}" alt="category-thumbnail" class="img-fluid" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                        <img src="{{ $category->image_url ?? asset('admin-assets/img/default-150x150.png') }}"
+                                            alt="category-thumbnail" class="img-fluid"
+                                            onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                     @endif
                                 </div>
                                 <div class="right">
@@ -143,7 +145,8 @@
                                 <div class="product-image position-relative">
                                     <a href="{{ route('front.product', $product->slug) }}" class="product-img">
                                         @if ($pro_img->image)
-                                            <img src="{{ $pro_img->image }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                            <img src="{{ $pro_img->image }}" class="card-img-top"
+                                                onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                         @else
                                             <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
                                                 class="card-img-top">
@@ -191,7 +194,8 @@
                                 <div class="product-image position-relative">
                                     <a href="{{ route('front.product', $product->slug) }}" class="product-img">
                                         @if (!empty($pro_img->image))
-                                            <img src="{{ $pro_img->image }}" class="card-img-top" onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
+                                            <img src="{{ $pro_img->image }}" class="card-img-top"
+                                                onerror="this.onerror=null; this.src='{{ asset('admin-assets/img/default-150x150.png') }}';">
                                         @else
                                             <img src="{{ asset('admin-assets/img/default-150x150.png') }}"
                                                 class="card-img-top">
@@ -199,9 +203,19 @@
                                         <a class="whishlist" href="222"><i class="far fa-heart"></i></a>
 
                                         <div class="product-action">
-                                            <a class="btn btn-dark" href="#">
-                                                <i class="fa fa-shopping-cart"></i> Add To Cart
-                                            </a>
+                                            @php
+                                                $exists = Cart::content()->where('id', $product->id)->isNotEmpty();
+                                            @endphp
+
+                                            @if (!$exists)
+                                                <a href="javascript:void(0);" onclick="addToCart({{ $product->id }})"
+                                                    class="btn btn-dark"><i class="fas fa-shopping-cart"></i> &nbsp;ADD TO
+                                                    CART</a>
+                                            @else
+                                                <a href="{{ route('front.cart') }}" class="btn btn-dark"><i
+                                                        class="fas fa-shopping-cart"></i>
+                                                    &nbsp; Already in Cart</a>
+                                            @endif
                                         </div>
                                 </div>
                                 <div class="card-body text-center mt-3">

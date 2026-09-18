@@ -60,7 +60,18 @@
                         <h2 class="price ">${{ $product->price }}</h2>
 
                         <p>{!! $product->short_description !!}</p>
-                        <a href="cart.php" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> &nbsp;ADD TO CART</a>
+
+                        @php
+                            $exists = Cart::content()->where('id', $product->id)->isNotEmpty();
+                        @endphp
+
+                        @if (!$exists)
+                            <a href="javascript:void(0);" onclick="addToCart({{ $product->id }})" class="btn btn-dark"><i
+                                    class="fas fa-shopping-cart"></i> &nbsp;ADD TO CART</a>
+                        @else
+                            <a href="{{ route('front.cart') }}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i>
+                                &nbsp; Already in Cart</a>
+                        @endif
                     </div>
                 </div>
 
@@ -153,3 +164,4 @@
         </div>
     </section>
 @endsection
+
