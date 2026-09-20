@@ -39,7 +39,9 @@ Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('front.a
 Route::post('/update-cart', [CartController::class, 'updateCart'])->name('front.updateCart');
 Route::post('/remove-from-cart', [CartController::class, 'deleteItem'])->name('front.deleteItem.cart');
 
+
 //! Auth Routes
+Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
 
 
 

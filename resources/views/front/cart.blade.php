@@ -111,10 +111,10 @@
                                 </div>
                                 <div class="d-flex justify-content-between summery-end">
                                     <div>Total</div>
-                                    <div>${{ Cart::total() }}</div>
+                                    <div>${{ Cart::subtotal() }}</div>
                                 </div>
                                 <div class="pt-5">
-                                    <a href="login.php" class="btn-dark btn btn-block w-100">Proceed to Checkout</a>
+                                    <a href="{{ route('front.checkout') }}" class="btn-dark btn btn-block w-100">Proceed to Checkout</a>
                                 </div>
                             </div>
                         </div>

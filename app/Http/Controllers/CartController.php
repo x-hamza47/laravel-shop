@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -82,5 +84,20 @@ class CartController extends Controller
         session()->flash('success', 'Item removed from cart successfully');
 
         return response()->json(['status' => true, 'message' => 'Item removed from cart successfully']);
+    }
+
+    public function checkout(){
+
+        if (Cart::count() == 0){
+            return redirect()->route('front.cart');
+        }
+
+        if  (!Auth::check()){
+            return redirect()->route('account.login.show')->with('error', "You need to Log In first!");
+        }
+
+        $countries = DB::table('countries')->orderBy('name')->get();
+
+        return view('front.checkout', compact('countries'));
     }
 }
