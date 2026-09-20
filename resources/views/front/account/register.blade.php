@@ -43,7 +43,8 @@
                     </div>
                     <button type="submit" class="btn btn-dark btn-block btn-lg" value="Register">Register</button>
                 </form>
-                <div class="text-center small">Already have an account? <a href="{{ route('account.login.show') }}">Login Now</a></div>
+                <div class="text-center small">Already have an account? <a href="{{ route('account.login.show') }}">Login
+                        Now</a></div>
             </div>
         </div>
     </section>
@@ -52,12 +53,14 @@
     <script>
         $("#registrationForm").submit(function(e) {
             e.preventDefault();
+            $("button[type='submit']").attr('disabled', true);
 
             $.post({
                 url: '{{ route('account.register') }}',
                 data: $(this).serializeArray(),
                 dataType: 'json',
                 success: function(response) {
+                    $("button[type='submit']").attr('disabled', false);
                     if (response.status) {
                         $('.form-control').removeClass('is-invalid');
                         $('.form-group').siblings('p').removeClass('invalid-feedback').html('');
@@ -75,6 +78,7 @@
 
                 },
                 error: function(JQXHR, exception) {
+
                     console.log("Something went wrong");
                 }
             })
