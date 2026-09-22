@@ -96,42 +96,15 @@ $('#categoryForm').submit(function(event){
         dataType : 'json',
         success: function(response){
             $("button[type=submit]").prop('disabled', false);
+            $('.form-control').removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html('');
 
-        if(response['status'] == true) {
-
+        if(response.status) {
             window.location.href = "{{ route('categories.index') }}";
 
-                $('#name').removeClass('is-invalid')
-                .siblings('p')
-                .removeClass('invalid-feedback').html('');
-
-                $('#slug').removeClass('is-invalid')
-                .siblings('p')
-                .removeClass('invalid-feedback').html('');
-
-
         } else {
-
-                var errors = response['errors'];
-            if (errors['name']) {
-                $('#name').addClass('is-invalid')
-                .siblings('p')
-                .addClass('invalid-feedback').html(errors['name']);
-            } else{
-                $('#name').removeClass('is-invalid')
-                .siblings('p')
-                .removeClass('invalid-feedback').html('');
-            }
-
-            if (errors['slug']) {
-                $('#slug').addClass('is-invalid')
-                .siblings('p')
-                .addClass('invalid-feedback').html(errors['slug']);
-            }else{
-                $('#slug').removeClass('is-invalid')
-                .siblings('p')
-                .removeClass('invalid-feedback').html('');
-            }
+            $.each(response.errors, function(field, message) {
+                $(`#${field}`).addClass('is-invalid').siblings('p').addClass('invalid-feedback').html(message[0]);
+            });
 
         }
 

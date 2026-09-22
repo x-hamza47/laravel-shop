@@ -53,21 +53,19 @@
     <script>
         $("#registrationForm").submit(function(e) {
             e.preventDefault();
-            $("button[type='submit']").attr('disabled', true); 
+            $("button[type='submit']").attr('disabled', true);
 
-            $.post({ 
+            $.post({
                 url: '{{ route('account.register') }}',
                 data: $(this).serializeArray(),
                 dataType: 'json',
                 success: function(response) {
                     $("button[type='submit']").attr('disabled', false);
+
+                    $('.form-control').removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html('');
                     if (response.status) {
-                        $('.form-control').removeClass('is-invalid');
-                        $('.form-group').siblings('p').removeClass('invalid-feedback').html('');
                         window.location.href = "{{ route('account.login.show') }}";
                     } else {
-                        $('.form-control').removeClass('is-invalid');
-                        $('.form-group').siblings('p').removeClass('invalid-feedback').html('');
 
                         $.each(response.errors, function(field, message) {
                             $(`#${field}`).addClass('is-invalid')

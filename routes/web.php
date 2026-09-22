@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductImageController;
+use App\Http\Controllers\admin\ShippingController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\TempImagesController;
 use App\Http\Controllers\AuthController;
@@ -65,19 +66,19 @@ Route::prefix('account')->group(function () {
 
 Route::prefix('admin')->group(function () {
 
-    // ---- Guest Routes
+    //Info: ---- Guest Routes
     Route::middleware('admin.guest')->group(function () {
 
         Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
         Route::post('/authenticate', [AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
     });
 
-    // ---- Admin Routes
+    // Info: ---- Admin Routes
     Route::middleware('admin.auth')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout', [HomeController::class, 'logout'])->name('admin.logout');
 
-        #------ Category Routes
+        // !------ Category Routes
         Route::controller(CategoryController::class)->group(function () {
             Route::prefix('categories')->group(function () {
 
@@ -90,7 +91,7 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-        //--------- Sub Category Routes
+        // !--------- Sub Category Routes
         Route::controller(SubCategoryController::class)->group(function () {
             Route::prefix('sub-categories')->group(function () {
 
@@ -103,7 +104,7 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-        //---------- Brands Routes
+        // !---------- Brands Routes
         Route::controller(BrandsController::class)->group(function () {
             Route::prefix('brands')->group(function () {
 
@@ -116,7 +117,7 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-        //---------- Product Routes
+        // !---------- Product Routes
         Route::controller(ProductController::class)->group(function () {
             Route::prefix('products')->group(function () {
 
@@ -127,6 +128,18 @@ Route::prefix('admin')->group(function () {
                 Route::get('/{product}/edit', 'edit')->name('products.edit');
                 Route::put('/{product}', 'update')->name('products.update');
                 Route::delete('/{product}', 'destroy')->name('products.delete');
+            });
+        });
+        // !---------- Shipping Routes
+        Route::controller(ShippingController::class)->group(function () {
+            Route::prefix('shipping')->group(function () {
+
+                Route::get('/create', 'create')->name('shipping.create');
+                Route::post('/', 'store')->name('shipping.store');
+                Route::get('/{shipping}/edit', 'edit')->name('shipping.edit');
+                Route::put('/{shipping}', 'update')->name('shipping.update');
+                Route::delete('/{shipping}', 'destroy')->name('shipping.delete');
+       
             });
         });
 
