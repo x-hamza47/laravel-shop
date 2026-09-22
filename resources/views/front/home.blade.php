@@ -154,9 +154,19 @@
                                         <a class="whishlist" href="222"><i class="far fa-heart"></i></a>
 
                                         <div class="product-action">
-                                            <a class="btn btn-dark" href="#">
-                                                <i class="fa fa-shopping-cart"></i> Add To Cart
-                                            </a>
+                                            @php
+                                                $exists = Cart::content()->where('id', $product->id)->isNotEmpty();
+                                            @endphp
+
+                                            @if (!$exists)
+                                                <a href="javascript:void(0);" onclick="addToCart({{ $product->id }})"
+                                                    class="btn btn-dark"><i class="fas fa-shopping-cart"></i> &nbsp;ADD TO
+                                                    CART</a>
+                                            @else
+                                                <a href="{{ route('front.cart') }}" class="btn btn-dark"><i
+                                                        class="fas fa-shopping-cart"></i>
+                                                    &nbsp; Already in Cart</a>
+                                            @endif
                                         </div>
                                 </div>
                                 <div class="card-body text-center mt-3">

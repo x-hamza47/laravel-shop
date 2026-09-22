@@ -53,9 +53,9 @@
     <script>
         $("#registrationForm").submit(function(e) {
             e.preventDefault();
-            $("button[type='submit']").attr('disabled', true);
+            $("button[type='submit']").attr('disabled', true); 
 
-            $.post({
+            $.post({ 
                 url: '{{ route('account.register') }}',
                 data: $(this).serializeArray(),
                 dataType: 'json',

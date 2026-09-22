@@ -38,10 +38,12 @@ Route::get('/cart', [CartController::class, 'cart'])->name('front.cart');
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('front.addToCart');
 Route::post('/update-cart', [CartController::class, 'updateCart'])->name('front.updateCart');
 Route::post('/remove-from-cart', [CartController::class, 'deleteItem'])->name('front.deleteItem.cart');
+Route::get('/thanks/{orderId}', [CartController::class, 'thankYou'])->name('front.thanks');
 
 
 //! Auth Routes
 Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
+Route::post('/process-checkout', [CartController::class, 'processCheckout'])->name('front.processCheckout');
 
 
 

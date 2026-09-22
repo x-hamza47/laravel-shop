@@ -63,7 +63,7 @@
 
                         @php
                             $exists = Cart::content()->where('id', $product->id)->isNotEmpty();
-                        @endphp
+                        @endphp 
 
                         @if (!$exists)
                             <a href="javascript:void(0);" onclick="addToCart({{ $product->id }})" class="btn btn-dark"><i
